@@ -1,0 +1,12 @@
+<img src="/img/home-startup-vale.png" alt="" id="logo" />
+<video id="v" autoplay></video>
+<h1></h1>
+<h2>Desenvolvido pelo GDG São Paulo - Setembro/2013</h2>
+
+<div id="checkin">
+  <label>mostre o QRCode para a webcam ou digite seu e-mail informado no cadastro e pressione &lt;ENTER&gt;</label>
+  <input type="text" id="txtEmail"></input>
+</div>
+
+<qr-scanner width="800" height="600" ng-success="onSuccess(data)" ng-error="onError(error)" />
+<div id="outdiv"></div>

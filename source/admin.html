@@ -1,0 +1,13 @@
+<div id="main">
+  <div id="begin">
+    <input type="button" id="authorizeButton"  value="Load event" />
+    <span></span>
+  </div>
+  <ul id="inscritos">
+
+    <li ng-repeat="attendee in attendees">
+      <span class="nome">{{attendee.name}}</span>
+      <span class="email">{{attendee.email}}</span>
+    </li>
+  </ul>
+</div>
