@@ -2,15 +2,17 @@
    'use strict';
 
   SelfCheckin.Controllers.
-    controller('AdminCtrl',['$scope', '$http','eventick', function($scope, $http, eventick) {
+    controller('AdminCtrl',['$scope', '$http', '$q','eventick', function($scope, $http, $q, eventick) {
     $scope.$emit('bodyClass', 'admin');
     $scope.token = '';
     $scope.attendees_list = [];
 
     $scope.loadEvent = function() {
-      eventick.getAttendees().success(function(data) {
-        $scope.attendees_list = data.attendees;
+      var defer = $q.defer();
+      defer.promise.then(function(attendees){
+        $scope.attendees_list = attendees;
       });
+      eventick.getAttendees(defer);
     };
 
   }]);

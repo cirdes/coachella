@@ -6,8 +6,8 @@
 //= require controllers/admin_controller
 //= require controllers/checkin_controller
 //= require controllers/main_controller
-//= require qr_directive
-//= require eventick_service
+//= require directives/qr_directive
+//= require services/eventick_service
 
 //= require vendor/jsqrcode/grid
 //= require vendor/jsqrcode/version

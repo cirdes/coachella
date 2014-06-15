@@ -9,6 +9,11 @@
       console.log('onSuccess');
       console.log(data);
     };
+
+    $scope.onError = function(data) {
+      console.log('Fu');
+      console.log(data);
+    };
   }]);
 
 }());

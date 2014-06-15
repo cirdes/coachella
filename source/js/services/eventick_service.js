@@ -2,13 +2,15 @@
    'use strict';
 
   SelfCheckin.Services.
-    factory('eventick',['$http', function($http) {
+    factory('eventick',['$http', '$q', function($http, $q) {
     var username = 'admin@eventick.com.br';
     var password = 'br4z1ljs';
     // var eventID = '4205';
     var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/6151/attendees.json';
 
-    var userToken = '';
+    var userToken = 'hWJtNvpvTLAy3U63fDRb';
+
+    var attendees = null;
 
     function tokenAuth(token) {
       return {'Authorization': 'Basic ' + btoa(token + ':')};
@@ -30,9 +32,16 @@
     }
 
     var eventick = {
-      getAttendees: function(attendees){
-        userToken = getToken();
-        return $http({method: 'GET', url: attendeesUrl, headers: tokenAuth(userToken)});
+      getAttendees: function(defer){
+        if(attendees !== null){
+          defer.resolve(attendees);
+        }else{
+          $http({method: 'GET', url: attendeesUrl, headers: tokenAuth(userToken)}).
+            success(function(data) {
+              attendees = data.attendees;
+              defer.resolve(attendees);
+            });
+        }
       }
     };
 
