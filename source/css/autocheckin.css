@@ -60,10 +60,6 @@
 		}
 
 .lightbox {
-  /** Hide the lightbox */
-  display:none;
-
-
   /** Apply basic lightbox styling */
   position: fixed;
   z-index: 9999;

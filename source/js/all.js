@@ -2,12 +2,17 @@
 //= require vendor/angular
 //= require vendor/angular-route
 
+//= require vendor/md5
+//= require vendor/angular-gravatar
+
 //= require app
 //= require controllers/admin_controller
 //= require controllers/checkin_controller
 //= require controllers/main_controller
 //= require directives/qr_directive
 //= require services/eventick_service
+
+
 
 //= require vendor/jsqrcode/grid
 //= require vendor/jsqrcode/version

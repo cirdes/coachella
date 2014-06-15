@@ -9,7 +9,7 @@
               <h2>use o seu QR Code</h2>
               <h3>Basta enquadrar na câmera ;)</h3>
                   <div class="qrcode">
-                      <qr-scanner width="400" height="300" ng-success="onSuccess(data)" ng-error="onError(error)" />
+                      <qr-scanner width="400" height="300" ng-success="qrCheckin(data)" ng-error="onError(error)" />
                       <div id="outdiv"></div>
                   </div>
               </div>
@@ -18,8 +18,8 @@
               <h2><em>ou</em>     seu e-mail</h2>
               <h3>Digite seu e-mail à moda antiga e pressione <strong>ENTER</strong>!</h3>
                   <div class="inputemail">
-                      <form>
-                          <input type="text" value="" placeholder="É o seu e-mail utilizado na inscrição, viu?" class="form-control input-hg">
+                      <form ng-submit="mailCheckin()">
+                          <input ng-model='email' type="text" value="" placeholder="É o seu e-mail utilizado na inscrição, viu?" class="form-control input-hg">
                       </form>
                   </div>
               </div>
@@ -30,9 +30,10 @@
   </div>
   <!-- /.container -->
 
-  <a href="#_" class="lightbox" id="img1">
+  <a href="#_" class="lightbox" id="img1" ng-show='lightbox'>
     <div class="alertmsg">
-      <h4>Iuhul, Cirdes!</h4>
+      <img gravatar-src="attendee_email" gravatar-size="100">
+      <h4>Iuhul, {{attendee_name}}!</h4>
       <p>Aguarde a impressão e retire sua etiqueta na impressora ao lado!</p>
     </div>
   </a>

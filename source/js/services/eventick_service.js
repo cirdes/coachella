@@ -3,14 +3,14 @@
 
   SelfCheckin.Services.
     factory('eventick',['$http', '$q', function($http, $q) {
-    var username = 'admin@eventick.com.br';
-    var password = 'br4z1ljs';
+    var username = '';
+    var password = '';
     // var eventID = '4205';
-    var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/6151/attendees.json';
+    var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/4205/attendees.json';
 
-    var userToken = 'hWJtNvpvTLAy3U63fDRb';
+    var userToken = '';
 
-    var attendees = null;
+    // var attendees = null;
 
     function tokenAuth(token) {
       return {'Authorization': 'Basic ' + btoa(token + ':')};
@@ -31,17 +31,23 @@
       });
     }
 
+    function findByEmail(e, index, array, email){
+      return e.email === email;
+    }
+
     var eventick = {
       getAttendees: function(defer){
-        if(attendees !== null){
-          defer.resolve(attendees);
-        }else{
+        getToken();
+        // if(attendees !== null){
+        //   console.log('aqui');
+        //   defer.resolve(attendees);
+        // }else{
           $http({method: 'GET', url: attendeesUrl, headers: tokenAuth(userToken)}).
             success(function(data) {
-              attendees = data.attendees;
-              defer.resolve(attendees);
+              // attendees = data.attendees;
+              defer.resolve(data.attendees);
             });
-        }
+        // }
       }
     };
 

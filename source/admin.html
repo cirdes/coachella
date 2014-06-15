@@ -9,7 +9,7 @@
     <div class="container">
         <div class="content-header">
             <button class="btn btn-embossed btn-primary" ng-click='loadEvent()'>Adicionar Evento</button>
-            <button class="btn btn-embossed btn-primary">Adicionar Novo Participante</button>
+            <button class="btn btn-embossed btn-primary" ng-click='loadTest()'>Adicionar Novo Participante</button>
             <form>
                 <label class="firstlabel">Ver</label>
                 <label class="radio">
@@ -39,11 +39,12 @@
                 </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="attendee in attendees_list">
-                <td>{{attendee.name}}</td>
-                <td>{{attendee.email}}</td>
-                <td>{{attendee.ticket_type}}</td>
-                <td>{{attendee.checked_at}}</td>
+              {{ attendee3 }}
+              <tr ng-repeat="a in attendees" ng-class='{success: a.checked_at}'>
+                <td>{{a.name}}</td>
+                <td>{{a.email}}</td>
+                <td>{{a.ticket_type}}</td>
+                <td>{{a.checked_at}}</td>
               </li>
             </tbody>
        </table>

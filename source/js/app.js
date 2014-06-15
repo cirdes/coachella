@@ -13,6 +13,6 @@ angular.module('selfCheckin').config(function($routeProvider, $locationProvider)
 
 var SelfCheckin = SelfCheckin || {};
 
-SelfCheckin.Controllers = angular.module('selfCheckin.controllers', ['ngRoute']);
+SelfCheckin.Controllers = angular.module('selfCheckin.controllers', ['ngRoute', 'ui.gravatar']);
 SelfCheckin.Directives = angular.module('selfCheckin.directives', []);
 SelfCheckin.Services = angular.module('selfCheckin.services', []);
