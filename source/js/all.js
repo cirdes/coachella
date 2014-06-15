@@ -1,7 +1,8 @@
 //= require vendor/modernizr-2.6.1.min
 //= require app
-//= require admin_controller
-//= require checkin_controller
+//= require controllers/admin_controller
+//= require controllers/checkin_controller
+//= require controllers/main_controller
 //= require qr_directive
 //= require eventick_service
 

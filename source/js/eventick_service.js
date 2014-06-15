@@ -3,8 +3,8 @@
 
   SelfCheckin.Services.
     factory('eventick',['$http', function($http) {
-    var username = '';
-    var password = '';
+    var username = 'admin@eventick.com.br';
+    var password = 'br4z1ljs';
     // var eventID = '4205';
     var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/6151/attendees.json';
 
@@ -31,9 +31,7 @@
 
     var eventick = {
       getAttendees: function(attendees){
-        if(userToken === null){
-          getToken();
-        }
+        userToken = getToken();
         return $http({method: 'GET', url: attendeesUrl, headers: tokenAuth(userToken)});
       }
     };
