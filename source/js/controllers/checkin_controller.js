@@ -55,7 +55,7 @@
             return false;
           }else{
             $scope.attendees[i].checked_at = new Date().toLocaleString();
-            $scope.showLightbox($scope.attendees[i]);
+            $scope.showLightbox(a);
             $scope.email = '';
             return true;
           }

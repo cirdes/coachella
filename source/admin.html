@@ -9,8 +9,8 @@
     <div class="container">
         <div class="content-header">
             <button class="btn btn-embossed btn-primary" ng-click='loadEvent()'>Adicionar Evento</button>
-            <button class="btn btn-embossed btn-primary" ng-click='loadTest()'>Adicionar Novo Participante</button>
-            <form>
+            <a class="btn btn-embossed btn-primary" href='/'>Adicionar Novo Participante</a>
+            <!-- <form>
                 <label class="firstlabel">Ver</label>
                 <label class="radio">
                     <input type="radio" name="group1" value="1" data-toggle="radio" checked>
@@ -25,8 +25,8 @@
                 <input type="radio" name="group1" value="3" data-toggle="radio">
                    Não checkados
                 </label>
-            </form>
-            <h2><span>CHECK-INS</span> 7/21</h2>
+            </form> -->
+            <h2><span>CHECK-INS</span> {{ (attendees | filter:checked).length }}/{{ attendees.length }}</h2>
         </div>
         <table id="participantes" class="table table-striped">
             <caption>Participantes</caption>
@@ -41,14 +41,14 @@
             <tbody>
               {{ attendee3 }}
               <tr ng-repeat="a in attendees" ng-class='{success: a.checked_at}'>
-                <td>{{a.name}}</td>
-                <td>{{a.email}}</td>
-                <td>{{a.ticket_type}}</td>
-                <td>{{a.checked_at}}</td>
+                  <td><a ng-click='checkAttendee(a)'>{{a.name}} </a></td>
+                  <td>{{a.email}}</td>
+                  <td>{{a.ticket_type}}</td>
+                  <td>{{a.checked_at}}</td>
               </li>
             </tbody>
        </table>
-       <div class="tablepag">
+       <!-- <div class="tablepag">
            <div class="pagination">
                 <ul>
                     <li class="previous"><a href="#" class="fui-arrow-left"></a></li>
@@ -61,7 +61,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- /.container -->
 </div>
 <body>

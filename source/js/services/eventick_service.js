@@ -37,7 +37,7 @@
 
     var eventick = {
       getAttendees: function(defer){
-        getToken();
+        // getToken();
         // if(attendees !== null){
         //   console.log('aqui');
         //   defer.resolve(attendees);
