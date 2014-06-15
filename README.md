@@ -22,3 +22,9 @@ $ middleman
 
 ```
 $ middleman build
+
+```
+
+### Live demo
+
+https://s3-sa-east-1.amazonaws.com/autocheckin.eventick.com.br/index.html#/
