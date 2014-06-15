@@ -3,6 +3,7 @@
 //= require admin_controller
 //= require checkin_controller
 //= require qr_directive
+//= require eventick_service
 
 //= require vendor/jsqrcode/grid
 //= require vendor/jsqrcode/version

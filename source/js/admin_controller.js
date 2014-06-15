@@ -2,15 +2,16 @@
    'use strict';
 
   SelfCheckin.Controllers.
-    controller('AdminCtrl',['$scope', function($scope) {
+    controller('AdminCtrl',['$scope', '$http','eventick', function($scope, $http, eventick) {
+    $scope.token = '';
+    $scope.attendees_list = [];
 
-    $scope.attendees = [
-      {'name': 'Cirdes Henrique',
-       'email': 'cirdes@eventick.com.br'},
-      {'name': 'André Braga',
-       'email': 'andre@eventick.com.br'},
-      {'name': 'Emiliano',
-       'email': 'emiliano@eventick.com.br'}
-    ];
+    $scope.loadEvent = function() {
+      eventick.getAttendees().success(function(data) {
+        $scope.attendees_list = data.attendees;
+      });
+      // console.log($scope.ddata);
+    };
+
   }]);
 }());

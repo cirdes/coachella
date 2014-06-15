@@ -1,13 +1,20 @@
-<div id="main">
+<div id="main" ng-controller='AdminCtrl'>
   <div id="begin">
-    <input type="button" id="authorizeButton"  value="Load event" />
+    <input type="button" id="authorizeButton" ng-click='loadEvent()' value="Load event" />
     <span></span>
   </div>
   <ul id="inscritos">
-
-    <li ng-repeat="attendee in attendees">
-      <span class="nome">{{attendee.name}}</span>
-      <span class="email">{{attendee.email}}</span>
+    <li>
+      <span>Nome</span>
+      <span>Email</span>
+      <span>Ticket</span>
+      <span>Check-In</span>
+    </li>
+    <li ng-repeat="attendee in attendees_list">
+      <span>{{attendee.name}}</span>
+      <span>{{attendee.email}}</span>
+      <span>{{attendee.ticket_type}}</span>
+      <span>{{attendee.checked_at}}</span>
     </li>
   </ul>
 </div>
