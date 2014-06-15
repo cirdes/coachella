@@ -1,4 +1,7 @@
 //= require vendor/modernizr-2.6.1.min
+//= require vendor/angular
+//= require vendor/angular-route
+
 //= require app
 //= require controllers/admin_controller
 //= require controllers/checkin_controller
