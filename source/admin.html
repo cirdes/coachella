@@ -1,20 +1,66 @@
-<div id="main" ng-controller='AdminCtrl'>
-  <div id="begin">
-    <input type="button" id="authorizeButton" ng-click='loadEvent()' value="Load event" />
-    <span></span>
-  </div>
-  <ul id="inscritos">
-    <li>
-      <span>Nome</span>
-      <span>Email</span>
-      <span>Ticket</span>
-      <span>Check-In</span>
-    </li>
-    <li ng-repeat="attendee in attendees_list">
-      <span>{{attendee.name}}</span>
-      <span>{{attendee.email}}</span>
-      <span>{{attendee.ticket_type}}</span>
-      <span>{{attendee.checked_at}}</span>
-    </li>
-  </ul>
+<body class='admin'>
+<div ng-controller='AdminCtrl'>
+    <header>
+        <div class="container">
+            <h1>Auto Check-In Eventick</h1>
+            <h2>Front-In BH</h2>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content-header">
+            <button class="btn btn-embossed btn-primary" ng-click='loadEvent()'>Adicionar Evento</button>
+            <button class="btn btn-embossed btn-primary">Adicionar Novo Participante</button>
+            <form>
+                <label class="firstlabel">Ver</label>
+                <label class="radio">
+                    <input type="radio" name="group1" value="1" data-toggle="radio" checked>
+                        Todos
+                    </label>
+                <label class="radio">
+                <input type="radio" name="group1" value="2" data-toggle="radio">
+                   Checkados
+                </label>
+
+                <label class="radio">
+                <input type="radio" name="group1" value="3" data-toggle="radio">
+                   Não checkados
+                </label>
+            </form>
+            <h2><span>CHECK-INS</span> 7/21</h2>
+        </div>
+        <table id="participantes" class="table table-striped">
+            <caption>Participantes</caption>
+            <thead>
+                <tr>
+                    <th data-sort="string">Nome</th>
+                    <th data-sort="string">E-mail</th>
+                    <th data-sort="string">Ticket</th>
+                    <th data-sort="float">Check-In</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="attendee in attendees_list">
+                <td>{{attendee.name}}</td>
+                <td>{{attendee.email}}</td>
+                <td>{{attendee.ticket_type}}</td>
+                <td>{{attendee.checked_at}}</td>
+              </li>
+            </tbody>
+       </table>
+       <div class="tablepag">
+           <div class="pagination">
+                <ul>
+                    <li class="previous"><a href="#" class="fui-arrow-left"></a></li>
+                    <li class="active"><a href="#fakelink">1</a></li>
+                    <li><a href="#fakelink">2</a></li>
+                    <li><a href="#fakelink">3</a></li>
+                    <li><a href="#fakelink">4</a></li>
+                    <li class="next"><a href="#" class="fui-arrow-right"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
 </div>
+<body>

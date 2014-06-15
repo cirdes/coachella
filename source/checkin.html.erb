@@ -1,0 +1,40 @@
+
+  <div class="container">
+      <div class="user-standby-header">
+          <div id="logo">Front-In BH</div>
+          <h1>Auto Check-In</h1>
+      </div>
+      <div class="user-standby-content">
+          <div class="half">
+              <h2>use o seu QR Code</h2>
+              <h3>Basta enquadrar na câmera ;)</h3>
+                  <div class="qrcode">
+                      <qr-scanner width="400" height="300" ng-success="onSuccess(data)" ng-error="onError(error)" />
+                      <div id="outdiv"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="half">
+              <h2><em>ou</em>     seu e-mail</h2>
+              <h3>Digite seu e-mail à moda antiga e pressione <strong>ENTER</strong>!</h3>
+                  <div class="inputemail">
+                      <form>
+                          <input type="text" value="" placeholder="É o seu e-mail utilizado na inscrição, viu?" class="form-control input-hg">
+                      </form>
+                  </div>
+              </div>
+          </div>
+       <div class="user-standby-footer">
+
+      </div>
+  </div>
+  <!-- /.container -->
+
+  <a href="#_" class="lightbox" id="img1">
+    <div class="alertmsg">
+      <h4>Iuhul, Cirdes!</h4>
+      <p>Aguarde a impressão e retire sua etiqueta na impressora ao lado!</p>
+    </div>
+  </a>
+
+<!-- /.lightbox alert -->

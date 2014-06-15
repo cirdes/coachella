@@ -1,0 +1,159 @@
+/* Modfications for Eventick Auto-CheckIn*/
+
+/* User Standby*/
+.user-standby-header{
+	text-align: center;
+}
+
+	#logo{
+		text-indent: -9999em;
+		margin:50px 0 0;
+
+	}
+
+	.user-standby h1{
+		font-size:48px;
+		font-weight: 100;
+		margin: 30px 0 0;
+	}
+
+
+.user-standby-content{
+	text-align: center;
+}
+
+.half{
+	width:50%;
+	margin: 20px 0 0 0;
+	float:left;
+	text-align: center;
+}
+	.user-standby h2{
+		font-size:38px;
+		font-weight: 600;
+		margin: 14px auto 0;
+
+	}
+		.user-standby h2 em{
+			opacity: 0.5;
+		}
+	.user-standby h3{
+		font-size:20px;
+		margin: 5px auto 0;
+		font-weight:100;
+	}
+
+	.qrcode{
+		width:300px;
+		height:300px;
+		background: white;
+		margin: 40px auto;
+		text-indent: -999em;
+	}
+
+	.inputemail{
+		margin: 140px 0 0 0;
+	}
+		.inputemail input{
+			width:80%;
+			margin: 0 auto;
+		}
+
+.lightbox {
+  /** Hide the lightbox */
+  display:none;
+
+
+  /** Apply basic lightbox styling */
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: black;
+  background: rgba(0,0,0,0.8);
+}
+	.alertmsg{
+		background:white;
+		width:60%;
+		height:200px;
+		border-radius: 4px;
+		padding:20px;
+		margin: 200px auto;
+	}
+		.alertmsg h4{
+			font-size: 72px;
+			color:#333;
+		}
+		.alertmsg p{
+			color:#333;
+			font-weight:100;
+		}
+
+/* Admin */
+
+.admin header{
+	background: #222;
+}
+	.admin header h1{
+		color:#FFF;
+		font-weight: 100;
+		font-size: 18px;
+	}
+	.admin header h2{
+		color:#FFF;
+		font-weight: 600;
+		font-size: 60px;
+		margin: 0 0 20px 0;
+		text-transform: uppercase;
+	}
+
+.admin .content-header{
+
+}
+	.admin .content-header button{
+		margin: 30px 0 0;
+		float:left;
+	}
+
+	.admin .content-header form{
+		float:left;
+		margin: 30px 0 0 50px;
+	}
+	.admin .content-header label{
+		display: inline-block;
+		margin-right:30px;
+	}
+	.admin .content-header label.firstlabel{
+		font-weight: 700;
+	}
+
+.admin table{
+	margin-top:40px;
+}
+	.admin table caption{
+		display:none;
+	}
+
+	.admin table th{
+		cursor: pointer;
+	}
+
+.admin .content-header h2{
+	float:right;
+	font-size: 33px;
+}
+	.admin .content-header h2 span{
+		font-weight: 100;
+		color: #1abc9c;
+	}
+
+.admin .tablepag{
+	text-align:center;
+}
+.admin .pagination{
+	text-align: center;
+	margin: 30px auto;
+}
