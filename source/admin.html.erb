@@ -1,4 +1,3 @@
-<body class='admin'>
 <div ng-controller='AdminCtrl'>
     <header>
         <div class="container">
@@ -9,7 +8,8 @@
     <div class="container">
         <div class="content-header">
             <button class="btn btn-embossed btn-primary" ng-click='loadEvent()'>Adicionar Evento</button>
-            <a class="btn btn-embossed btn-primary" href='/'>Adicionar Novo Participante</a>
+            <%= link_to 'Voltar para credenciamento', '/', class: 'btn btn-embossed btn-primary' %>
+
             <!-- <form>
                 <label class="firstlabel">Ver</label>
                 <label class="radio">
@@ -64,4 +64,3 @@
     </div> -->
     <!-- /.container -->
 </div>
-<body>

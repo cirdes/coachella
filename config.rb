@@ -31,6 +31,7 @@
 ###
 # Helpers
 ###
+# activate :directory_indexes
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -63,6 +64,10 @@ configure :build do
 
   # Enable cache buster
   # activate :asset_hash
+
+  activate :asset_host, host:'https://s3-sa-east-1.amazonaws.com/autocheckin.eventick.com.br'
+
+  activate :directory_indexes
 
   # Use relative URLs
   # activate :relative_assets
