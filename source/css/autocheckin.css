@@ -79,6 +79,15 @@
 		padding:20px;
 		margin: 200px auto;
 	}
+
+	.alertmsg-error{
+		background:white;
+		width:30%;
+		height:100px;
+		border-radius: 4px;
+		padding:20px;
+		margin: 200px auto;
+	}
 		.alertmsg h4{
 			font-size: 72px;
 			color:#333;

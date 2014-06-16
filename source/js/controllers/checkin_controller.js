@@ -4,7 +4,8 @@
   SelfCheckin.Controllers.
     controller('CheckinCtrl',['$scope', '$q','$timeout', 'eventick', function($scope, $q, $timeout, eventick) {
     $scope.$emit('bodyClass', 'user-standby');
-    $scope.lightbox = false;
+    $scope.lightboxSuccess = false;
+    $scope.lightboxError = false;
     $scope.scanning = false;
 
     $scope.qrCheckin = function(data) {
@@ -17,32 +18,40 @@
           if(a.code === code[1]){
             if(a.checked_at){
               $scope.scanning = false;
-              alert('Usuário já credenciado!');
+              $scope.showLightboxError('Usuário já credenciado!');
               return false;
             }else{
               $scope.attendees[i].checked_at = new Date().toLocaleString();
-              $scope.showLightbox($scope.attendees[i]);
+              $scope.showLightboxSuccess($scope.attendees[i]);
               $scope.email = '';
               return true;
             }
+          }else{
+            $scope.showLightboxError('QRCode inválido');
           }
         }
       }
     };
 
-    $scope.onError = function(data) {
-      console.log('Fu...');
-    };
-
-    $scope.showLightbox = function(attendee) {
+    $scope.showLightboxSuccess = function(attendee) {
       $timeout(function(){
-        $scope.lightbox = false;
+        $scope.lightboxSuccess = false;
         $scope.scanning = false;
-      }, 4000);
+      }, 3000);
 
       $scope.attendee_name = attendee.name;
       $scope.attendee_email = attendee.email;
-      $scope.lightbox = true;
+      $scope.lightboxSuccess = true;
+    };
+
+    $scope.showLightboxError = function(msg) {
+      $timeout(function(){
+        $scope.lightboxError = false;
+        $scope.scanning = false;
+      }, 3000);
+
+      $scope.lightboxErrorMsg = msg;
+      $scope.lightboxError = true;
     };
 
     $scope.mailCheckin = function(){
@@ -51,17 +60,17 @@
         a = $scope.attendees[i];
         if(a.email === $scope.email){
           if(a.checked_at){
-            alert('Usuário já credenciado!');
+            $scope.showLightboxError('Usuário já credenciado!');
             return false;
           }else{
             $scope.attendees[i].checked_at = new Date().toLocaleString();
-            $scope.showLightbox(a);
+            $scope.showLightboxSuccess(a);
             $scope.email = '';
             return true;
           }
         }
       }
-      alert('Email não cadastrado!');
+      $scope.showLightboxError('Email não cadastrado!');
     };
   }]);
 

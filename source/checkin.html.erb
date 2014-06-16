@@ -30,7 +30,7 @@
   </div>
   <!-- /.container -->
 
-  <a href="#_" class="lightbox" id="img1" ng-show='lightbox'>
+  <a href="#_" class="lightbox" id="img1" ng-show='lightboxSuccess'>
     <div class="alertmsg">
       <img gravatar-src="attendee_email" gravatar-size="100">
       <h4>Iuhul, {{attendee_name}}!</h4>
@@ -38,4 +38,9 @@
     </div>
   </a>
 
+<a href="#_" class="lightbox" id="img1" ng-show='lightboxError'>
+  <div class="alertmsg-error">
+    <h4>{{lightboxErrorMsg}}</h4>
+  </div>
+</a>
 <!-- /.lightbox alert -->
