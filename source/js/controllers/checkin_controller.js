@@ -2,7 +2,7 @@
    'use strict';
 
   SelfCheckin.Controllers.
-    controller('CheckinCtrl',['$scope', '$q','$timeout', 'eventick', function($scope, $q, $timeout, eventick) {
+    controller('CheckinCtrl',['$scope', '$q','$timeout', 'eventick', 'dymoprinter', function($scope, $q, $timeout, eventick, dymoprinter) {
     $scope.$emit('bodyClass', 'user-standby');
     $scope.lightboxSuccess = false;
     $scope.lightboxError = false;
@@ -22,6 +22,7 @@
               return false;
             }else{
               $scope.attendees[i].checked_at = new Date().toLocaleString();
+              dymoprinter.print(a.name);
               $scope.showLightboxSuccess($scope.attendees[i]);
               $scope.email = '';
               return true;
@@ -64,6 +65,7 @@
             return false;
           }else{
             $scope.attendees[i].checked_at = new Date().toLocaleString();
+            dymoprinter.print(a.name);
             $scope.showLightboxSuccess(a);
             $scope.email = '';
             return true;

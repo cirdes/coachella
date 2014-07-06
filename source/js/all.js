@@ -1,4 +1,5 @@
 //= require vendor/modernizr-2.6.1.min
+//= require vendor/DYMO.Label.Framework.1.2.6
 //= require vendor/angular
 //= require vendor/angular-route
 
@@ -11,8 +12,7 @@
 //= require controllers/main_controller
 //= require directives/qr_directive
 //= require services/eventick_service
-
-
+//= require services/dymo_service
 
 //= require vendor/jsqrcode/grid
 //= require vendor/jsqrcode/version
