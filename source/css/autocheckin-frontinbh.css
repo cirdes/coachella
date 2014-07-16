@@ -1,9 +1,9 @@
 body.user-standby, body.admin header{
-	background: url(../img/bg.jpg);
+	background: url(../img/bg-beers.jpg);
 }
 
 #logo{
-	background: url(../img/front-in-bh-white.svg) 150px 40px;
+	background: url(../img/devbeer.png) 150px 40px;
 	width:150px;
 	height:40px;
 	margin: 50px auto 0;

@@ -2,7 +2,7 @@
    'use strict';
 
   SelfCheckin.Controllers.
-    controller('AdminCtrl',['$scope', '$http', '$q','eventick', function($scope, $http, $q, eventick) {
+    controller('AdminCtrl',['$scope', '$http', '$q','eventick', 'dymoprinter', function($scope, $http, $q, eventick, dymoprinter) {
     $scope.$emit('bodyClass', 'admin');
 
     $scope.checked = function(item) {
@@ -14,6 +14,7 @@
         a.checked_at = null;
       }else{
         a.checked_at = new Date().toLocaleString();
+        dymoprinter.print(a.name);
       }
 
     };

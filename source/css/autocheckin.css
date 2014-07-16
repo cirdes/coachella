@@ -118,8 +118,8 @@
 .admin .content-header{
 
 }
-	.admin .content-header button{
-		margin: 30px 0 0;
+	.admin .content-header button, a{
+		margin: 30px 7px 0;
 		float:left;
 	}
 

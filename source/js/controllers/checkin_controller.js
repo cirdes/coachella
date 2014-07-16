@@ -27,10 +27,9 @@
               $scope.email = '';
               return true;
             }
-          }else{
-            $scope.showLightboxError('QRCode inválido');
           }
         }
+        $scope.showLightboxError('QRCode inválido');
       }
     };
 
