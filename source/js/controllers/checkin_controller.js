@@ -7,6 +7,7 @@
     $scope.lightboxSuccess = false;
     $scope.lightboxError = false;
     $scope.scanning = false;
+    var defer;
 
     $scope.qrCheckin = function(data) {
       if(!$scope.scanning){
@@ -21,8 +22,14 @@
               $scope.showLightboxError('Usuário já credenciado!');
               return false;
             }else{
-              $scope.attendees[i].checked_at = new Date().toLocaleString();
+              defer = $q.defer();
+              defer.promise.then(function(attendee){
+                attendee.dirty = false;
+              });
+              $scope.attendees[i].checked_at = new Date();
+              eventick.checkAttendee(defer, a);
               dymoprinter.print(a.name);
+
               $scope.showLightboxSuccess($scope.attendees[i]);
               $scope.email = '';
               return true;
@@ -63,8 +70,15 @@
             $scope.showLightboxError('Usuário já credenciado!');
             return false;
           }else{
-            $scope.attendees[i].checked_at = new Date().toLocaleString();
+            defer = $q.defer();
+            defer.promise.then(function(attendee){
+              attendee.dirty = false;
+            });
+            $scope.attendees[i].checked_at = new Date();
+
+            eventick.checkAttendee(defer, a);
             dymoprinter.print(a.name);
+
             $scope.showLightboxSuccess(a);
             $scope.email = '';
             return true;

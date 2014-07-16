@@ -35,15 +35,16 @@
                     <th data-sort="string">E-mail</th>
                     <th data-sort="string">Ticket</th>
                     <th data-sort="float">Check-In</th>
+                    <th data-sort="float">Dirty</th>
                 </tr>
             </thead>
             <tbody>
-              {{ attendee3 }}
               <tr ng-repeat="a in attendees" ng-class='{success: a.checked_at}'>
                   <td><a ng-click='checkAttendee(a)'>{{a.name}} </a></td>
                   <td>{{a.email}}</td>
                   <td>{{a.ticket_type}}</td>
                   <td>{{a.checked_at}}</td>
+                  <td>{{a.dirty || false }}</td>
               </li>
             </tbody>
        </table>

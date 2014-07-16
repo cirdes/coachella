@@ -5,7 +5,9 @@
     factory('eventick',['$http', '$q', function($http, $q) {
     var username = '';
     var password = '';
-    var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/6845/attendees.json';
+    var eventID = '6845'
+    var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees.json';
+    var checkinUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees/';
 
     var userToken = '';
 
@@ -47,6 +49,12 @@
               defer.resolve(data.attendees);
             });
         // }
+      },
+      checkAttendee: function(defer, a){
+        $http({method: 'PUT', data: { checked_at: a.checked_at} ,  url: checkinUrl + a.code + '.json', headers: tokenAuth(userToken)}).
+          success(function(data) {
+            defer.resolve(a);
+          });
       }
     };
 
