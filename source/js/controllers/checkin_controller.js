@@ -22,16 +22,7 @@
               $scope.showLightboxError('Usuário já credenciado!');
               return false;
             }else{
-              defer = $q.defer();
-              defer.promise.then(function(attendee){
-                attendee.dirty = false;
-              });
-              $scope.attendees[i].checked_at = new Date();
-              eventick.checkAttendee(defer, a);
-              dymoprinter.print(a.name);
-
-              $scope.showLightboxSuccess($scope.attendees[i]);
-              $scope.email = '';
+              $scope.checkAndPrint($scope.attendees[i]);
               return true;
             }
           }
@@ -66,27 +57,37 @@
       for(i = 0; i < $scope.attendees.length; i++) {
         a = $scope.attendees[i];
         if(a.email === $scope.email){
+          $scope.email = '';
           if(a.checked_at){
             $scope.showLightboxError('Usuário já credenciado!');
             return false;
           }else{
-            defer = $q.defer();
-            defer.promise.then(function(attendee){
-              attendee.dirty = false;
-            });
-            $scope.attendees[i].checked_at = new Date();
-
-            eventick.checkAttendee(defer, a);
-            dymoprinter.print(a.name);
-
-            $scope.showLightboxSuccess(a);
-            $scope.email = '';
+            $scope.checkAndPrint($scope.attendees[i]);
             return true;
           }
         }
       }
       $scope.showLightboxError('Email não cadastrado!');
     };
+
+    $scope.checkAndPrint = function(attendee) {
+      defer = $q.defer();
+      defer.promise.then(function(attendee){
+        attendee.dirty = false;
+        $scope.updateAttendeeStorage();
+      });
+
+      attendee.checked_at = new Date();
+      attendee.dirty = true;
+
+      eventick.checkAttendee(defer, attendee);
+      // dymoprinter.print(attendee.name);
+
+      $scope.showLightboxSuccess(attendee);
+      $scope.email = '';
+      $scope.updateAttendeeStorage();
+    };
+
   }]);
 
 }());

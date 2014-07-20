@@ -5,7 +5,7 @@
     factory('eventick',['$http', '$q', function($http, $q) {
     var username = '';
     var password = '';
-    var eventID = '6845'
+    var eventID = ''
     var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees.json';
     var checkinUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees/';
 

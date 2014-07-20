@@ -2,13 +2,14 @@
     <header>
         <div class="container">
             <h1>Auto Check-In Eventick</h1>
-            <h2>DevBeers SP #6 </h2>
+            <h2>Front in BH 2014 </h2>
         </div>
     </header>
     <div class="container">
         <div class="content-header">
-            <button class="btn btn-embossed btn-primary" ng-click='loadEvent()'>Adicionar Evento</button>
+            <!-- <button class="btn btn-embossed btn-primary" ng-click='loadEvent()'>Adicionar Evento</button> -->
             <%= link_to 'Voltar para credenciamento', '/', class: 'btn btn-embossed btn-primary' %>
+            <%= link_to 'Sincronizar com o servidor', '#/admin',  class: 'btn btn-embossed btn-primary', ng_click: 'syncEventick()' %>
             <!-- <form>
                 <label class="firstlabel">Ver</label>
                 <label class="radio">
@@ -44,7 +45,7 @@
                   <td>{{a.email}}</td>
                   <td>{{a.ticket_type}}</td>
                   <td>{{a.checked_at}}</td>
-                  <td>{{a.dirty || false }}</td>
+                  <td><a ng-click='syncAttendee(a)'> {{a.dirty || false }}</a></td>
               </li>
             </tbody>
        </table>

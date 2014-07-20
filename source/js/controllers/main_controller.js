@@ -2,7 +2,9 @@
    'use strict';
 
   SelfCheckin.Controllers.
-    controller('MainCtrl',['$scope', '$q','eventick', function($scope, $q, eventick) {
+    controller('MainCtrl',['$scope', '$q','eventick', '$localStorage', function($scope, $q, eventick, $localStorage) {
+
+    $scope.$storage = $localStorage;
 
     var defer = $q.defer();
 
@@ -12,8 +14,29 @@
 
     defer.promise.then(function(attendees){
       $scope.attendees = attendees;
+      $scope.$storage.attendees = attendees;
     });
-    eventick.getAttendees(defer);
+
+    if(typeof $scope.$storage.attendees === 'undefined'){
+      eventick.getAttendees(defer);
+    }else{
+      $scope.attendees = $scope.$storage.attendees;
+    }
+
+
+    $scope.updateAttendeeStorage = function() {
+      $scope.$storage.attendees = $scope.attendees;
+    };
+
+    $scope.syncEventick = function(a) {
+      defer = $q.defer();
+      defer.promise.then(function(attendees){
+        $scope.attendees = attendees;
+        $scope.$storage.attendees = attendees;
+      });
+
+      eventick.getAttendees(defer);
+    };
 
   }]);
 

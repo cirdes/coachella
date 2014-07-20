@@ -6,6 +6,8 @@
 //= require vendor/md5
 //= require vendor/angular-gravatar
 
+//= require vendor/ngStorage
+
 //= require app
 //= require controllers/admin_controller
 //= require controllers/checkin_controller
