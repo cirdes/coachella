@@ -6,8 +6,8 @@
     var username = 'admin@eventick.com.bir';
     var password = 'br4z1ljs';
     var eventID = '5182'
-    var attendeesUrl = 'http://localhost:3000/api/v1/events/' + eventID + '/attendees.json';
-    var checkinUrl = 'http://localhost:3000/api/v1/events/' + eventID + '/attendees/';
+    var attendeesUrl = 'https://eventick.com.br/api/v1/events/' + eventID + '/attendees.json';
+    var checkinUrl = 'https://eventick.com.br/api/v1/events/' + eventID + '/attendees/';
 
     var userToken = 'hWJtNvpvTLAy3U63fDRb';
 
