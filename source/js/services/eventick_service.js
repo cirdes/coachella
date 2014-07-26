@@ -3,13 +3,13 @@
 
   SelfCheckin.Services.
     factory('eventick',['$http', '$q', function($http, $q) {
-    var username = '';
-    var password = '';
-    var eventID = ''
-    var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees.json';
-    var checkinUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees/';
+    var username = 'admin@eventick.com.bir';
+    var password = 'br4z1ljs';
+    var eventID = '5182'
+    var attendeesUrl = 'http://localhost:3000/api/v1/events/' + eventID + '/attendees.json';
+    var checkinUrl = 'http://localhost:3000/api/v1/events/' + eventID + '/attendees/';
 
-    var userToken = '';
+    var userToken = 'hWJtNvpvTLAy3U63fDRb';
 
     // var attendees = null;
 
