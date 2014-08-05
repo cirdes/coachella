@@ -24,7 +24,6 @@ SelfCheckin.Controllers.
       });
     }, function(reason) {
       $scope.erroMessage = true;
-      // handle failure
     });
   };
 

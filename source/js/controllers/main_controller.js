@@ -16,7 +16,7 @@
 
     $scope.loadAttendee = function() {
       if(typeof $scope.$storage.attendees === 'undefined'){
-        eventick.getAttendees().then(function(value) {
+        eventick.getAttendees($scope.$storage.token, $scope.$storage.eventId).then(function(value) {
           $scope.attendees = value.data.attendees;
           $scope.$storage.attendees = value.data.attendees;
         });
@@ -40,6 +40,8 @@
         $scope.$storage.attendees = value.data.attendees;
       });
     };
+
+    $scope.loadAttendee();
   }]);
 
 }());
