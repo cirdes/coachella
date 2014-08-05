@@ -31,7 +31,7 @@
 ###
 # Helpers
 ###
-# activate :directory_indexes
+activate :directory_indexes
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -47,6 +47,7 @@ end
 #     "Helping"
 #   end
 # end
+
 
 set :css_dir, 'css'
 
@@ -67,7 +68,7 @@ configure :build do
 
   activate :asset_host, host:'https://s3-sa-east-1.amazonaws.com/autocheckin.eventick.com.br'
 
-  # activate :directory_indexes
+  activate :directory_indexes
 
   # Use relative URLs
   # activate :relative_assets

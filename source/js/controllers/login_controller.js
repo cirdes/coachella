@@ -1,5 +1,6 @@
 SelfCheckin.Controllers.
   controller('LoginCtrl',['$scope','$localStorage', '$location', 'login', function ($scope, $localStorage, $location, login) {
+  $scope.$emit('bodyClass', 'user-login');
   $scope.$storage = $localStorage;
 
   $scope.token = '';
@@ -10,7 +11,7 @@ SelfCheckin.Controllers.
 
   if($scope.$storage.token && $scope.$storage.eventId){
     $scope.loadAttendee();
-    $location.path('');
+    $location.path('/');
   }
 
   $scope.signIn = function() {
@@ -30,6 +31,6 @@ SelfCheckin.Controllers.
   $scope.chooseEvent = function() {
     $scope.$storage.eventId = $scope.myEvent.id;
     $scope.loadAttendee();
-    $location.path('');
+    $location.path('/');
   };
 }]);
