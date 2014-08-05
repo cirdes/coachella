@@ -1,5 +1,5 @@
-Coachella
-=========
+![Coachella](http://www.lucyvstheglobe.com/wp-content/uploads/2011/04/coachella-logo.png "Coachella")
+
 
 Eventick Auto Checkin
 
