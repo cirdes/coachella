@@ -1,31 +1,15 @@
 <div ng-controller='AdminCtrl'>
     <header>
-        <div class="container">
-            <h1>Auto Check-In Eventick</h1>
-            <h2>Front in BH 2014 </h2>
-        </div>
+      <div class="container">
+          <h1>Auto Check-In Eventick</h1>
+          <h2>Front in BH 2014 </h2>
+      </div>
     </header>
     <div class="container">
+    <%= link_to 'Sair', '', class: 'btn btn-embossed btn-primary pull-right', ng_click: 'logout()' %>
         <div class="content-header">
-            <!-- <button class="btn btn-embossed btn-primary" ng-click='loadEvent()'>Adicionar Evento</button> -->
             <%= link_to 'Voltar para credenciamento', '/', class: 'btn btn-embossed btn-primary' %>
             <%= link_to 'Sincronizar com o servidor', '#/admin',  class: 'btn btn-embossed btn-primary', ng_click: 'syncEventick()' %>
-            <!-- <form>
-                <label class="firstlabel">Ver</label>
-                <label class="radio">
-                    <input type="radio" name="group1" value="1" data-toggle="radio" checked>
-                        Todos
-                    </label>
-                <label class="radio">
-                <input type="radio" name="group1" value="2" data-toggle="radio">
-                   Checkados
-                </label>
-
-                <label class="radio">
-                <input type="radio" name="group1" value="3" data-toggle="radio">
-                   Não checkados
-                </label>
-            </form> -->
             <h2><span>CHECK-INS</span> {{ (attendees | filter:checked).length }}/{{ attendees.length }}</h2>
         </div>
         <table id="participantes" class="table table-striped">
@@ -49,19 +33,5 @@
               </li>
             </tbody>
        </table>
-       <!-- <div class="tablepag">
-           <div class="pagination">
-                <ul>
-                    <li class="previous"><a href="#" class="fui-arrow-left"></a></li>
-                    <li class="active"><a href="#fakelink">1</a></li>
-                    <li><a href="#fakelink">2</a></li>
-                    <li><a href="#fakelink">3</a></li>
-                    <li><a href="#fakelink">4</a></li>
-                    <li class="next"><a href="#" class="fui-arrow-right"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
     <!-- /.container -->
 </div>

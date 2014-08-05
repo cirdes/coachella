@@ -1,5 +1,6 @@
 //= require vendor/modernizr-2.6.1.min
 //= require vendor/DYMO.Label.Framework.1.2.6
+
 //= require vendor/angular
 //= require vendor/angular-route
 
@@ -12,6 +13,10 @@
 //= require controllers/admin_controller
 //= require controllers/checkin_controller
 //= require controllers/main_controller
+//= require controllers/login_controller
+
+//= require services/login_service
+
 //= require directives/qr_directive
 //= require services/eventick_service
 //= require services/dymo_service

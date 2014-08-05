@@ -83,29 +83,7 @@
 
       eventick.checkAttendee(defer, attendee);
 
-      var vector = [];
-      vector["Front in BH 2014 + Camisa [1º Lote]"] = "*";
-      vector["Front in BH 2014 + Camisa + almoço  [1º Lote]"] =  "**";
-      vector["Front in BH 2014 [1º Lote]"] =  "";
-      vector["Almoço"] =  "";
-      vector["almoco+camisa+avulso"] = "";
-      vector["VIP"] = "**";
-      vector["Ação Bernard - Com Almoço e Com camisa"] =  "**";
-      vector["Cortesia Globo.com - SEM camisa e sem almoço"] =  "";
-      vector["Cortesia - SEM camisa e almoço"] = "";
-      vector["Front in BH 2014 [2º Lote]"] =  "";
-      vector["Front in BH 2014 + Camisa [2º Lote]"] = "*";
-      vector["Front in BH 2014 + Camisa + almoço  [2º Lote]"] = "**";
-      vector["Cortesia - Com camisa e Com Almoço"] = "**";
-      vector["Front in BH 2014 [3º Lote]"] = "";
-      vector["Cortesia - COM camisa - SEM almoço"] = "*";
-      vector["Front in BH 2014 [Lote Extra]"] = "";
-
-      if(vector[attendee.ticket_type].length) {
-        dymoprinter.print(attendee.name + '\n' + vector[attendee.ticket_type]);
-      } else {
-        dymoprinter.print(attendee.name);
-      }
+      dymoprinter.print(attendee.name);
 
       $scope.showLightboxSuccess(attendee);
       $scope.email = '';

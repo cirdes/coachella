@@ -8,7 +8,10 @@ angular.module('selfCheckin').config(function($routeProvider, $locationProvider)
   }).when('/', {
    templateUrl: 'checkin.html',
    controller: 'CheckinCtrl',
- });
+ }).when('/login', {
+  templateUrl: 'login.html',
+  controller: 'LoginCtrl',
+});
 });
 
 var SelfCheckin = SelfCheckin || {};

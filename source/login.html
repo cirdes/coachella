@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <form class="form-signin" ng-submit='signIn()' ng-show='loginForm'>
+    <h3 class="form-signin-heading">Faça o login.</h3>
+    <p>Entre com suas credencias do Eventick!</p>
+    <input ng-model='user.email' type="text" class="form-control" name="username" placeholder="Email" required="" autofocus="" />
+    <input ng-model='user.password' type="password" class="form-control" name="password" placeholder="Senha" required=""/>
+    </br>
+    <p class="bg-danger" ng-show='erroMessage'> Email ou senha incorreta!</p>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+  </form>
+
+  <form class="form-signin" ng-submit='chooseEvent()' ng-hide='loginForm'>
+    <h3 class="form-signin-heading">Escolha seu evento.</h3>
+    </br>
+    <select ng-model="myEvent" ng-options="event.title for event in events"></select><br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Ok</button>
+  </form>
+</div>
