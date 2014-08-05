@@ -31,7 +31,7 @@
 ###
 # Helpers
 ###
-# activate :directory_indexes
+activate :directory_indexes
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -47,6 +47,7 @@ end
 #     "Helping"
 #   end
 # end
+
 
 set :css_dir, 'css'
 

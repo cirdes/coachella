@@ -38,6 +38,7 @@
       }, 3000);
 
       $scope.attendee_name = attendee.name;
+      $scope.ticket_type = attendee.ticket_type;
       $scope.attendee_email = attendee.email;
       $scope.lightboxSuccess = true;
     };
@@ -81,7 +82,8 @@
       attendee.dirty = true;
 
       eventick.checkAttendee(defer, attendee);
-      // dymoprinter.print(attendee.name);
+
+      dymoprinter.print(attendee.name);
 
       $scope.showLightboxSuccess(attendee);
       $scope.email = '';

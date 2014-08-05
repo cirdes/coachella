@@ -2,56 +2,32 @@
    'use strict';
 
   SelfCheckin.Services.
-    factory('eventick',['$http', '$q', function($http, $q) {
-    var username = '';
-    var password = '';
-    var eventID = ''
-    var attendeesUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees.json';
-    var checkinUrl = 'https://www.eventick.com.br/api/v1/events/' + eventID + '/attendees/';
+    factory('eventick',['$http', '$localStorage', function($http, $localStorage) {
+    var storage = $localStorage;
 
-    var userToken = '';
-
-    // var attendees = null;
-
-    function tokenAuth(token) {
-      return {'Authorization': 'Basic ' + btoa(token + ':')};
+    function tokenAuth() {
+      return {'Authorization': 'Basic ' + btoa(storage.token + ':')};
     }
 
-    function getToken() {
-      $http({
-        method: 'GET',
-        url: 'https://www.eventick.com.br/api/v1/tokens.json',
-        headers: {'Authorization': 'Basic ' + btoa(username + ':' + password)}
-        }
-      ).
-      success(function(data) {
-        userToken = data.token;
-        console.log(userToken);
-      }).error(function(data, status, headers, config) {
-        console.log('error');
-      });
+    function attendeesUrl() {
+      return 'https://www.eventick.com.br/api/v1/events/' + storage.eventId + '/attendees.json';
     }
+
+    function checkinUrl() {
+      return 'https://www.eventick.com.br/api/v1/events/' + storage.eventId + '/attendees/';
+    }
+
 
     function findByEmail(e, index, array, email){
       return e.email === email;
     }
 
     var eventick = {
-      getAttendees: function(defer){
-        // getToken();
-        // if(attendees !== null){
-        //   console.log('aqui');
-        //   defer.resolve(attendees);
-        // }else{
-          $http({method: 'GET', url: attendeesUrl, headers: tokenAuth(userToken)}).
-            success(function(data) {
-              // attendees = data.attendees;
-              defer.resolve(data.attendees);
-            });
-        // }
+      getAttendees: function(){
+        return $http({method: 'GET', url: attendeesUrl(), headers: tokenAuth()});
       },
-      checkAttendee: function(defer, a){
-        $http({method: 'PUT', data: { checked_at: a.checked_at} ,  url: checkinUrl + a.code + '.json', headers: tokenAuth(userToken)}).
+      checkAttendee: function(a){
+        $http({method: 'PUT', data: { checked_at: a.checked_at} ,  url: checkinUrl() + a.code + '.json', headers: tokenAuth()}).
           success(function(data) {
             defer.resolve(a);
           });

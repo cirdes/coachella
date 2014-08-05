@@ -26,8 +26,7 @@ $ middleman build
 ```
 
 ### Live demo
-
-https://s3-sa-east-1.amazonaws.com/autocheckin.eventick.com.br/index.html#/
+http://autocheckin.eventick.com.br.s3-website-sa-east-1.amazonaws.com/
 
 ### Creditos
 Esse projeto foi baseado no código que Luis Leão escreveu para fazer credenciamento no GDG-SP

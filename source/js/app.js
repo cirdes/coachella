@@ -1,14 +1,19 @@
 angular.module('selfCheckin', ['selfCheckin.controllers', 'selfCheckin.directives', 'selfCheckin.services']);
 
 angular.module('selfCheckin').config(function($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
+
   $routeProvider
    .when('/admin', {
-    templateUrl: 'admin.html',
+    templateUrl: 'admin',
     controller: 'AdminCtrl',
   }).when('/', {
-   templateUrl: 'checkin.html',
+   templateUrl: 'checkin',
    controller: 'CheckinCtrl',
- });
+ }).when('/login', {
+  templateUrl: 'login',
+  controller: 'LoginCtrl',
+});
 });
 
 var SelfCheckin = SelfCheckin || {};
