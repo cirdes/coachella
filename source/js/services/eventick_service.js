@@ -26,7 +26,7 @@
       getAttendees: function(){
         return $http({method: 'GET', url: attendeesUrl(), headers: tokenAuth()});
       },
-      checkAttendee: function(a){
+      checkAttendee: function(defer, a){
         $http({method: 'PUT', data: { checked_at: a.checked_at} ,  url: checkinUrl() + a.code + '.json', headers: tokenAuth()}).
           success(function(data) {
             defer.resolve(a);
