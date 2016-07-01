@@ -22,7 +22,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.9.1)
     execjs (2.2.0)
     ffi (1.9.3)
     fssm (0.2.10)
@@ -115,7 +115,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  eventmachine (~> 1.0.4)
   middleman (~> 3.3.3)
   middleman-livereload (~> 3.1.0)
   tzinfo-data
   wdm (~> 0.1.0)
+
+BUNDLED WITH
+   1.12.5
